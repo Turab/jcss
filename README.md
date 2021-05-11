@@ -60,6 +60,7 @@ You can use two variables (or even add more per your wish) in the file list:
 - `{template}` will match your template path.
 
 ## Notes
+- Combined content will have file name of each block at its top. So when debugging, you can check in which file that code is by looking at the top of that block.
 - JCSS is influenced by the idea of "Combine" script of [Rakaz](http://rakaz.nl/code/combine).
 - JCSS will not "minify" the JS and CSS content. It is better to use minified files with JCSS.
 - JCSS is licensed under GNU GPL v3.0
