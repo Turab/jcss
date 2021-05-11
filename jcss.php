@@ -7,6 +7,8 @@
 *  GNU GPL v3.0
 *******************************************************************/
 
+include_once './config.php';
+
 // This file can be cached yes.
 header('Cache-Control: public');
 
