@@ -1,8 +1,6 @@
 <?php
 
-// You better have a config file to define env variables.
-$env['cache'] = '/tmp/cache';
-$env['base'] = 'https://example.com';
+include_once './config.php';
 
 // Dynamically adjust the JS and CSS file list per page, per your wish
 $js_files = array(
