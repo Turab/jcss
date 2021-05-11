@@ -41,7 +41,7 @@ $css_files = array(
 	'{template}/css/nightwolf.css',
 );
 
-// CSS and JS cache
+// Create file list for this page. (Do NOT Modify)
 foreach (array('css', 'js') as $type) {
 	${$type . '_cache'} = md5(implode(',', ${$type . '_files'}));
 	// This specific js/css list is not cached before
