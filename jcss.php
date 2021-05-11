@@ -13,15 +13,15 @@ include_once './config.php';
 header('Cache-Control: public');
 
 if (!isset($_GET['t']) || !in_array($_GET['t'], array('c', 'j')) || !isset($_GET['f']))
-		exit; // Nothing to serve here.
+	exit; // Nothing to serve here.
 
 $type = $_GET['t'] == 'c' ? 'css' : 'js';
 
 if (!is_file($env['cache'] . '/' . $type . '-' . $_GET['f']))
-		exit; // Again nothing to serve
+	exit; // Again nothing to serve
 
 $files = explode("\n", str_replace(array('{base}', '{template}'), array($env['path'], $env['template']),
-			file_get_contents($env['cache'] . '/' . $type . '-' . $_GET['f']))
+	file_get_contents($env['cache'] . '/' . $type . '-' . $_GET['f']))
 );
 
 // Find the newest modified file
@@ -35,7 +35,7 @@ header("Etag: $hash");
 header('Last-Modified: ' . gmdate('D, d M Y H:i:s', $lastmodified) . ' GMT');
 
 if ((isset($_SERVER['HTTP_IF_NONE_MATCH']) && stripslashes($_SERVER['HTTP_IF_NONE_MATCH']) == $hash) ||
-		(isset($_SERVER['HTTP_IF_MODIFIED_SINCE']) && strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE']) == $lastmodified))
+	(isset($_SERVER['HTTP_IF_MODIFIED_SINCE']) && strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE']) == $lastmodified))
 {
 	// Tell the browser nothing has changed
 	header('HTTP/1.0 304 Not Modified');
