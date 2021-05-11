@@ -44,7 +44,8 @@ if ((isset($_SERVER['HTTP_IF_NONE_MATCH']) && stripslashes($_SERVER['HTTP_IF_NON
 }
 else
 {
-	if ($env['compress_jcss'])
+	$encoding = 'none';
+	if ($env['compress_jcss'] && isset($_SERVER['HTTP_ACCEPT_ENCODING']))
 	{
 		// Which method to compress with
 		if (strpos($_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip') !== false)
@@ -52,8 +53,6 @@ else
 		elseif (strpos($_SERVER['HTTP_ACCEPT_ENCODING'], 'deflate') !== false)
 			$encoding = 'deflate';
 	}
-	elseif (!$env['compress_jcss'] || !isset($_SERVER['HTTP_ACCEPT_ENCODING']) || !isset($encoding))
-		$encoding = 'none';
 
 	if ($encoding != 'none')
 		header ("Content-Encoding: $encoding");
