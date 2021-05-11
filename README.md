@@ -54,6 +54,9 @@ This will create a "file list" in your cache folder. Now you can include JCSS as
 <link rel="stylesheet" href="<?=$env['base'];?>/jcss.php?t=c&f=<?=$css_cache;?>">
 <script src="<?=$env['base'];?>/jcss.php?t=j&f=<?=$js_cache;?>"></script>
 ```
+### Do I need to clear the content in the cache folder frequently?
+No. JCSS will clear the cache if a file in the list is modified after the cache was created. So you don't have to clear the cache from time to time. But the files which hold a list of CSS and JS files are never deleted. If you are changing the file list constantly, you can implement a method to mark that file for a page and whenever the list is modified, the old list gets deleted or you can delete extensionless css-* and js-* files from time to time manually. In fact this doesn't have an important positive or negative impact.
+
 ### Variables
 You can use two variables (or even add more per your wish) in the file list:
 - `{base}` will match your main path.
