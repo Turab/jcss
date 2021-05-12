@@ -22,7 +22,7 @@ Today, all of the modern browsers support compressed content. So in our example,
 There are a quite number of good tools which attain similar results but;
 - JCSS has a very much smaller footprint.
 - It doesn't depend on external libraries.
-- Other tols usually don't serve content compressed with gzip, instead they minify the code.
+- Other tools usually don't serve content compressed with gzip, instead they minify the code.
 - Most of the other tools work statically, so you have to create combined files prior to site publishing and repeat the process each time you add a new file or change anything in the existing files. On the other hand, JCSS works dynamically to load JS and CSS for each page which can be altered at runtime. That means you can have as many as JS and CSS files listed for each page dynamically, without the need of producing a combined file for each list. So with JCSS, you don't have to run CLI commands or manually merge files before you can use and you don't have to repeat this whole process each time you change anything in combined JS and CSS files.
 
 ## How to use?
@@ -66,5 +66,5 @@ You can use two variables (or even add more per your wish) in the file list:
 - Combined content will have file name of each block at its top. So when debugging, you can check in which file that code is by looking at the top of that block.
 - JCSS will not "minify" the JS and CSS content. It is better to use "already minified" files with JCSS.
 - JCSS can be used with remote files as well; but this is almost senseless if they are hosted on a CDN.
-- JCSS is influenced by the idea of "Combine" script of [Rakaz](http://rakaz.nl/code/combine).
+- JCSS is influenced by the idea of "Combine" script of [Niels Leenhee](http://rakaz.nl/code/combine).
 - JCSS is licensed under GNU GPL v3.0
