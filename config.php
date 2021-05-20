@@ -6,5 +6,5 @@ $env = array(
 	'cache' => '/tmp/cache', // Where to store cache files
 	'path' => '/var/www/vhosts/example.com/html', // Your base path
 	'template' => '/var/www/vhosts/example.com/html/templates/nightwolf', // Your template files
-  'base' => 'https://example.com'; // You sites base URL
+	'base' => 'https://example.com'; // You sites base URL
 );
